@@ -1,0 +1,27 @@
+<h1> ngCity </h1>
+<div style="border:1px solid black">
+    <button class="w3-btn Farm w3-input" >Save building</button>
+    <div>
+        <form #buildingForm="ngForm">
+            Type
+            <select class="w3-input" name="type" (change)="selectFirst()" [(ngModel)]="building.type">
+                <option *ngFor="let value of types" [value]="value">{{value}}</option>
+            </select>
+            Name
+            <input type="text" class="w3-input" name="name" [(ngModel)]="building.name" required />
+            Subtype 
+            <select class="w3-input" name="product" [(ngModel)]="building.subtype">
+                <option *ngFor="let value of getBuildingTypes()" [value]="value">{{value}}</option>
+            </select>
+            Position
+            <input type="number" class="w3-input" required min="1" max="59" name="position" [(ngModel)]="building.position" 
+               readonly
+            />
+            <span *ngIf="building.type=='Industry' || building.type=='Farm'">
+                Production rate
+                <input type="number" class="w3-input" min="0" name="productionrate" [(ngModel)]="building.productionrate" />
+            </span>
+            <button [disabled]="!buildingForm.valid" class="w3-input Farm" (click)="save()">Save</button>    
+        </form>        
+    </div>
+</div>

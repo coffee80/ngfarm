@@ -1,0 +1,9 @@
+<div [ngClass]="getClass()">
+    <h3 (click)="selectMe()">{{building.name}}</h3>
+    {{building.type}} <br />
+    <b>{{building.subtype}}</b> <br />
+    <div *ngIf="building.productionrate>0">
+        {{building.productionrate}} per click <br />
+        {{building.production}} produced
+    </div>
+</div>

@@ -1,0 +1,34 @@
+h3{
+    min-height:85px;
+}
+
+.Farm h3 {
+    background-color:darkseagreen;
+}
+
+.Service h3 {
+    background-color:lightblue;
+}
+
+.House h3 {
+    background-color:mistyrose;    
+}
+
+.Industry h3{
+    background-color:yellow;
+}
+
+h1, h2, h3 {
+    padding:0.2em;    
+}
+
+.building{
+    padding:.6em !important;
+    border:1px solid black;
+    height:220px;
+}
+
+.building.selected{
+    border:1px solid red;
+}
+
